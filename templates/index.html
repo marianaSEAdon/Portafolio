@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Sánchez</title>
+    <meta name="description"
+        content="Desarrolladora de software especializada en aplicaciones web modernas y soluciones digitales para emprendedores y empresas.">
+    <meta name="keywords"
+        content="portfolio, programación, desarrollo de software, soluciones digitales, crecimiento de emprendimiento">
+
+    <!--Open Graph-->
+    <meta property="og:title" content="Portfolio - Mariana Sánchez">
+    <meta property="og:description"
+        content="Desarrolladora de software especializada en aplicaciones web modernas y soluciones digitales para emprendedores y empresas.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mariana Sánchez">
+
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Mariana Sánchez">
+    <meta name="twitter:description"
+        content="Desarrolladora de software especializada en aplicaciones web modernas y soluciones digitales para emprendedores y empresas.">
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <link rel="stylesheet" href="/static/css/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="/static/img/logo.webp">
+</head>
+
+<body class="bg-sky-50 text-stone-900 dark:bg-[#0b0f19] dark:text-cyan-50 transition-colors duration-300">
+    {% include 'partials/nav.html' %}
+    <div class="fixed inset-0 pointer-events-none opacity-[0.05] bg-[url('/noise.png')]"></div>
+    <main>
+        <section id="inicio" class="relative pt-20">
+            <div
+                class="w-80 h-80 bg-purple-200 dark:bg-cyan-950 absolute top-0 -left-5 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full">
+            </div>
+
+            <div class="container pt-4">
+                <div class="flex flex-col items-center z-20 md:flex-row justify-center">
+                    <div class="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
+                        <div
+                            class="mb-8 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-purple-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest uppercase">
+
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                            </span>
+                            Disponible para proyectos
+                        </div>
+
+                        <h1 class="title mb-6 italic">
+                            <span class="line">Tu próximo proyecto,</span>
+                            <span class="block"><span
+                                    class="text-purple-500 dark:text-purple-400 underline">empieza</span> con una gran
+                                web.
+                            </span>
+                        </h1>
+                        <h6 class="font-medium mb-2">Mariana Emilia Sánchez Adon</h6>
+                        <p class="leading-relaxed mb-8 text-lg font-medium text-slate-600 dark:text-slate-400">
+                            Diseño y desarrollo de sistemas personalizados para impulsar
+                            tu presencia en línea, optimizar operaciones y expandir tu mercado.
+                            Con un enfoque en la creatividad y la funcionalidad.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#contacto"
+                                class="bg-cyan-400 text-black font-bold py-3 px-6 rounded hover:bg-cyan-500 transition">
+                                Contactarme
+                            </a>
+                            <a href="/static/docs/Mariana E. Sánchez Adon CV.pdf" download="Mariana_Sanchez_CV"
+                                class="border border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded hover:bg-cyan-400 hover:text-black transition">
+                                Descargar CV
+                            </a>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-7 mt-5 text-3xl">
+                            <a target="_blank" href="https://github.com/marianaSEAdon"><i
+                                    class="fa-brands fa-github transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/software-programmation/"><i
+                                    class="fa-brands fa-linkedin transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"></i></a>
+                            <a target="_blank" href="mailto:marianaemiliasanchez24@gmail.com"><i
+                                    class="fa-regular fa-envelope transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="../static/img/faicon.png" alt="Logo" class="max-w-lg w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="bg-slate-50/5 py-20 relative px-4 sm:px-6 lg:px-8">
+            <div class="text-center font-bold text-3xl mb-8">
+                <h2>Sobre mi</h2>
+            </div>
+            <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                <h4>Mi información donde puedes conocerme</h4>
+            </div>
+            <div>
+                <div class="flex flex-col md:flex-row items-start gap-10 max-w-7xl mx-auto p-8 rounded-2xl">
+                    <div class="md:w-1/2 rounded-2xl relative overflow-hidden" style="max-width: 400px;">
+
+                        <div
+                            class="w-80 h-80 dark:bg-purple-300 bg-cyan-400/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 rounded-full">
+                        </div>
+
+                        <img src="/static/img/photo.PNG" alt="yo" class="relative z-10">
+                    </div>
+                    <div class="text-center md:text-left md:w-1/2 md:ml-20">
+                        <h4 class="title mb-6">Mariana E. Sánchez Adon</h4>
+                        <p class="leading-relaxed mb-4">
+                            Desarrolladora de software con enfoque en el desarrollo Back-end y la creación
+                            de aplicaciones web robustas y escalables. Trabajo principalmente con C#, Python,
+                            SQL Server y tecnologías web como HTML5 y CSS. Me enfoco en desarrollar soluciones
+                            eficientes, mantenibles y alineadas con las necesidades del negocio, ayudando a
+                            emprendedores y empresas a transformar sus ideas en productos digitales funcionales.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div
+                                class="mb-8 flex flex-col items-start gap-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-500 dark:text-cyan-400 py-4 px-6 rounded-xl text-sm font-medium tracking-widest uppercase">
+                                <h5 class="line">Experiencia</h5>
+                                <span class="block text-sm text-cyan-600/70 dark:text-cyan-400/70">+2 años</span>
+                            </div>
+                            <div
+                                class="mb-8 flex flex-col items-start gap-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-500 dark:text-cyan-400 py-4 px-6 rounded-xl text-sm font-medium tracking-widest uppercase">
+                                <h5 class="line">Proyectos</h5>
+                                <span class="block text-sm text-cyan-600/70 dark:text-cyan-400/70">+15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="habilidades">
+            <div class="py-20 relative">
+                <div class="items-center justify-center text-center font-bold text-3xl mb-8">
+                    <h2>Habilidades</h2>
+                </div>
+                <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                    <h4>Tecnologías y herramientas que domino</h4>
+                </div>
+                <div class="container py-8 text-center">
+                    <div class="grid lg:grid-cols-4 gap-12 lg:gap-8 px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-server"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Back-end</h4>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-slate-100 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/452091/python.svg" alt="python"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Python</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/452184/csharp.svg" alt="c#"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                C#</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/353925/javascript.svg"
+                                                alt="JavaScript" class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                JavaScript</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-window-restore"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Front-end</h4>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/452228/html-5.svg" alt="HTML"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                HTML</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/452185/css-3.svg" alt="CSS"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                CSS</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/374118/tailwind.svg"
+                                                alt="Tailwind css" class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Tailwind CSS</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/353498/bootstrap.svg" alt="bootstrap"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Bootstrap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-database"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Base de Datos</h4>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
+                                                alt="sql-server" class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                SQL Server</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/354200/postgresql.svg"
+                                                alt="postgresql" class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                PostgreSQL</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Herramientas</h4>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/452210/git.svg" alt="git"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Git</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/450156/github.svg" alt="github"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                GitHub</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/448271/azure-devops.svg"
+                                                alt="azure-devops" class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Azure DevOps</p>
+                                        </div>
+                                        <div class="group/skill flex items-center gap-2 rounded-full border border-[#ECE4FB] dark:border-white/10 bg-slate-100 dark:bg-[#110f1a]/60 px-3 py-2 transition-all duration-300 hover:border-purple-600/30 hover:bg-[#F7F1FF] dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100"
+                                            style="transition-delay: 100ms;">
+                                            <img src="https://www.svgrepo.com/show/448222/figma.svg" alt="Figma"
+                                                class="h-4 w-4 object-contain flex-shrink-0">
+                                            <p
+                                                class="text-xs font-semibold text-slate-900 dark:text-white/80 dark:hover:text-purple-600 hover:text-purple-600 transition-colors duration-300 whitespace-nowrap">
+                                                Figma</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trayectoria" class="bg-slate-50/5">
+            <div class="py-20 relative pl-6 pr-6">
+                <div class="items-center justify-center text-center font-bold text-3xl mb-8">
+                    <h2>Trayectoria</h2>
+                </div>
+                <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                    <h4>Mi experiencia y estudios</h4>
+                </div>
+
+                <div class="container py-8">
+                    <div class="relative">
+
+                        <!-- LÍNEA CENTRAL -->
+                        <div
+                            class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-white/10">
+                        </div>
+
+                        <div class="flex flex-col md:flex-row mb-10">
+
+                            <!-- IZQUIERDA: Experiencia -->
+                            <div class="relative md:w-1/2 md:pr-10">
+                                <!-- Punto alineado al top del card -->
+                                <span class="hidden md:flex absolute right-[-6px] top-0 z-10 h-3 w-3">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                                </span>
+                                <div
+                                    class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 py-5 px-5 rounded-2xl text-left cursor-pointer">
+                                    <div class="flex flex-wrap gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Experiencia</h4>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Desarrollo de Productos (Desarrollador Junior)</h3>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 mb-2">RiserUP
+                                            (Pasante)</p>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-2"> <i
+                                                class="fa-solid fa-location-dot"></i> Remoto
+                                        </p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                                            Plataforma web para gestionar inventario de productos.
+                                            <a target="_blank" href="https://github.com/yeisondev001/Inventario"
+                                                class="text-purple-500 hover:text-purple-600 transition">
+                                                <i class="fa-brands fa-github text-lg"></i>
+                                            </a>
+                                        </p>
+                                        <div
+                                            class="mb-4 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-purple-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">
+                                            Octubre 2025 - Marzo 2026
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DERECHA: Educación -->
+                            <div class="relative md:w-1/2 md:pl-10 mt-6 md:mt-0">
+                                <!-- Punto alineado al top del card -->
+                                <span class="hidden md:flex absolute left-[-6px] top-0 z-10 h-3 w-3">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                                </span>
+                                <div
+                                    class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 py-5 px-5 rounded-2xl text-left cursor-pointer">
+                                    <div class="flex flex-wrap gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Educación</h4>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Tecnólogo en Desarrollo de Software</h3>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 mb-2">INSTITUTO
+                                            TECNOLÓGICO
+                                            DE LAS AMÉRICAS (ITLA)</p>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4"> <i
+                                                class="fa-solid fa-location-dot"></i> Santo Domingo, República
+                                            Dominicana</p>
+
+                                        <div
+                                            class="mb-4 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-purple-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">
+                                            2024 - Actualidad
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- LÍNEA CENTRAL -->
+                        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/10">
+                        </div>
+
+                        <div class="flex flex-col md:flex-row mb-10">
+
+                            <!-- IZQUIERDA: Experiencia -->
+                            <div class="relative md:w-1/2 md:pr-10">
+                                <!-- Punto alineado al top del card -->
+                                <span class="hidden md:flex absolute right-[-6px] top-0 z-10 h-3 w-3">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                                </span>
+                                <div
+                                    class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 py-5 px-5 rounded-2xl text-left cursor-pointer">
+                                    <div class="flex flex-wrap gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-award"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Certificados</h4>
+                                    </div>
+                                    <div>
+                                        <ul class="list-inside list-disc">
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                                Curso de Desarrollo Web Full Stack - Nivel Intermedio. (2026)</li>
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                                Desarrollador Back-end. (2026)</li>
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                                Certificación en Fundamentos de Scrum. (2026) </li>
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                                Inglés Intensivo 12 niveles. (2025)</li>
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">IT
+                                                Essentials: PC Hardware and Software. (2024)</li>
+                                            <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                                Técnico en informática (Ofimática). (2022)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <div class="py-20 relative">
+                <div class="items-center justify-center text-center font-bold text-3xl mb-8">
+                    <h2>Proyectos</h2>
+                </div>
+                <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                    <h4>Soluciones reales en producción</h4>
+                </div>
+                <div class="container py-8 text-center">
+                    <div class="grid lg:grid-cols-3 gap-12 lg:gap-8 px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 text-center py-5 px-5 rounded-2xl bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 cursor-pointer">
+                            <div class="text-center md:text-left">
+                                <img src="/static/img/social_network.png" alt="Social Network" class="rounded-lg">
+                                <h4 class="text-xl font-bold py-2">Social Network</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">
+                                    Una red social para conectar personas con intereses similares. Red social en ASP NET
+                                    Core
+                                    MVC con arquitectura Onion y Entity Framework Core (Code-First).
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-4 mt-5 justify-center items-center">
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-pink-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">C#</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-purple-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">.NET
+                                        Core</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-blue-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">EF
+                                        Core</span>
+                                </div>
+                                <div class="flex gap-4 text-2xl">
+                                    <a target="_blank" href="https://github.com/marianaSEAdon/SocialNetwork"><i
+                                            class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#"><i class="fa-regular fa-eye-slash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 text-center py-5 px-5 rounded-2xl bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 cursor-pointer">
+                            <div class="text-center md:text-left">
+                                <img src="/static/img/landing-page.png" alt="K-Bakery" class="rounded-lg">
+                                <h4 class="text-xl font-bold py-2">K-Bakery</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">
+                                    Una tienda en línea para vender productos de panadería. Tienda desarrollada con
+                                    Python Flask. Con
+                                    servicio de envío de correos electrónicos para contactar desde la página.
+                                </p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4 mt-5 justify-center items-center">
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-red-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">HTML</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-blue-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">CSS</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-yellow-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">JavaScript</span>
+                                </div>
+                                <div class="flex gap-4 text-2xl">
+                                    <a target="_blank" href="https://github.com/marianaSEAdon/proyecto-landing"><i
+                                            class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#"><i class="fa-regular fa-eye-slash"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 text-center py-5 px-5 rounded-2xl bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 cursor-pointer">
+                            <div class="text-center md:text-left">
+                                <img src="/static/img/medcore-api.jpeg" alt="Inventario" class="rounded-lg">
+                                <h4 class="text-xl font-bold py-2">MedCore</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">
+                                    Sistema de Gestión Médica. Backend en C#, ASP.NET Core con arquitectura en capas,
+                                    Repository Pattern y DTOs. Uso de base de datos SQL Server en la nube con Azure.
+                                </p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4 mt-5 justify-center items-center">
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-500 dark:text-purple-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">C#</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-blue-500 dark:text-blue-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">API
+                                        REST</span>
+                                    <span
+                                        class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-yellow-500 dark:text-yellow-400 py-1.5 px-3.5 rounded-full text-xs font-medium tracking-widest">Backend</span>
+                                </div>
+                                <div class="flex gap-4 text-2xl">
+                                    <a target="_blank"
+                                        href="https://github.com/yeliana267/MedCore/tree/20240124--Insurance/MedCore"><i
+                                            class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#"><i class="fa-regular fa-eye-slash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="valores" class="bg-slate-50/5">
+            <div class="py-20 relative">
+                <div class="items-center justify-center text-center font-bold text-3xl mb-8">
+                    <h2>Valores</h2>
+                </div>
+                <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                    <h4>Principios que guían mi trabajo</h4>
+                </div>
+                <div class="container py-8 text-center">
+                    <div class="grid lg:grid-cols-3 gap-12 lg:gap-8 px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-handshake"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Integridad</h4>
+                                    </div>
+
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                                        Trabajo con transparencia, responsabilidad y respeto por los compromisos
+                                        asumidos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto flex justify-center pt-5">
+                                <div class="flex gap-4 text-yellow-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-comments"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Comunicación</h4>
+                                    </div>
+
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                                        Mantengo una comunicación clara y continua durante todo el desarrollo del
+                                        proyecto.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto flex justify-center pt-5">
+                                <div class="flex gap-4 text-yellow-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="border border-[#E9E2F8] dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 text-center py-5 px-5 rounded-2xl h-full flex flex-col cursor-pointer">
+
+                            <div class="flex-1">
+                                <div class="text-center md:text-left">
+                                    <div class="flex flex-wrap sm:flex-row gap-4 mb-4">
+                                        <div
+                                            class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                            <i class="fa-solid fa-clock"></i>
+                                        </div>
+
+                                        <h4 class="text-xl font-bold py-2">Puntualidad</h4>
+                                    </div>
+
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                                        Respeto los plazos acordados y organizo mi trabajo para entregar resultados a
+                                        tiempo.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto flex justify-center pt-5">
+                                <div class="flex gap-4 text-yellow-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20 relative px-4 sm:px-6 lg:px-8">
+            <div class="text-center font-bold text-3xl mb-8">
+                <h2>Contacto</h2>
+            </div>
+            <div class="text-center mb-8 text-slate-600 dark:text-slate-400 text-lg font-medium">
+                <h4>Contactémonos y hagamos realidad tu visión</h4>
+            </div>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.6fr_1fr] gap-10 items-start">
+                <div>
+                    <div
+                        class="border border-[#E9E2F8] dark:border-white/10 rounded-2xl p-6 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-purple-600/30 dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100">
+
+                        <!-- Header -->
+                        <div class="flex items-center gap-4 mb-5">
+
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-500 font-bold">
+                                MS
+                            </div>
+
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                                    Mariana Sánchez
+                                </h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Desarrolladora de Software
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <div>
+                            <ul class="list-inside list-disc">
+                                <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                    Disponible para proyectos freelance.</li>
+                                <li class="font-semibold text-slate-500 dark:text-slate-400 text-sm mt-1">
+                                    Disponible para contratación.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="mt-5 pt-4 flex justify-between items-center">
+
+                            <span class="text-xs text-slate-500">
+                                GitHub
+                            </span>
+
+                            <a target="_blank" href="https://github.com/marianaSEAdon"
+                                class="text-purple-500 hover:text-purple-600 transition">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form id="form-contacto"
+                        class="form border border-[#E9E2F8] dark:border-white/10 transition-all duration-300 hover:border-purple-600/30 bg-white/60 dark:bg-slate-900/40 backdrop-blur-md dark:hover:bg-primary/[0.1] hover:shadow-[0_4px_16px_rgba(168,85,247,0.15)] active:scale-95 opacity-100 max-w-2xl mx-auto p-8 rounded-2xl"
+                        method="POST" action="/send_email" novalidate>
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-bold mb-2">Nombre</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 text-black"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-bold mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 text-black"
+                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minlength="5" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-bold mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 text-black"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-cyan-400 text-black font-bold py-3 px-6 rounded hover:bg-cyan-500 transition">
+                            Enviar
+                        </button>
+                    </form>
+                </div>
+                <div id="flash-messages" class="fixed top-16 right-4 z-50 w-96 space-y-2"></div>
+            </div>
+        </section>
+
+    </main>
+    {% include 'partials/footer.html' %}
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<header id="header-fijo" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-gray-300 dark:border-cyan-900 bg-sky-50 dark:bg-[#0b0f19] pl-6 pr-6">
+  <div class="flex items-center justify-between px-6 py-4 md:px-10">
+    
+    <!-- Logo -->
+    <div class="text-cyan-600 dark:text-cyan-400 text-xl font-bold">
+      Mariana Sánchez
+    </div>
+
+    <!-- Botón móvil -->
+    <button id="menu-btn" class="md:hidden text-stone-900 dark:text-white text-2xl">
+      ☰
+    </button>
+
+    <!-- Navbar -->
+    <nav id="navbar"
+      class="hidden md:flex md:flex-row absolute bg-white dark:bg-[#0b0f19] md:static top-full left-0 w-full md:w-auto md:bg-transparent shadow-md md:shadow-none">
+      
+      <ul class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-4 md:p-0">
+        <li><a href="#" class="text-stone-900 dark:text-cyan-400 font-bold hover:text-cyan-500 transition">Inicio</a></li>
+        <li><a href="#sobre-mi" class="text-stone-900 dark:text-cyan-400 font-bold hover:text-cyan-500 transition">Sobre mi</a></li>
+        <li><a href="#habilidades" class="text-stone-900 dark:text-cyan-400 font-bold hover:text-cyan-500 transition">Habilidades</a></li>
+        <li><a href="#proyectos" class="text-stone-900 dark:text-cyan-400 font-bold hover:text-cyan-500 transition">Proyectos</a></li>
+        <li><a href="#contacto" class="text-stone-900 dark:text-cyan-400 font-bold hover:text-cyan-500 transition">Contacto</a></li>
+        <button id="darkButton">
+        <i class="fa-regular fa-moon"></i>
+      </button>
+      </ul>
+
+    </nav>
+  </div>
+</header>
