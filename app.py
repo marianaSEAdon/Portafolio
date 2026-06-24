@@ -52,7 +52,7 @@ def send_email():
         return jsonify({"status": "success", "message": "Mensaje enviado correctamente"})
     except Exception as e:
         print(f"Error: {e}")
-        return jsonify({"status": "error", "message": "Error al enviar mensaje"})
+        return jsonify({"status": "error", "message": str(e)})
     
 
 if __name__ == "__main__":
