@@ -1,24 +1,14 @@
 from flask import Flask, render_template, request, jsonify
-from flask_mail import Mail, Message
+import resend
 from dotenv import load_dotenv
 import os 
 import re
-import traceback
 
 load_dotenv()
 
+resend.api_key = os.environ["RESEND_API_KEY"]
+
 app = Flask(__name__)
-
-app.secret_key = os.getenv('FLASK_SECRET_KEY', '123')
-
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
-
-mail = Mail(app)
 
 @app.route('/')
 def index():
@@ -30,6 +20,11 @@ def send_email():
         nombre = request.form['name']
         correo = request.form['email']
         mensaje = request.form['message']
+        honeypot = request.form.get("website")
+        
+        
+        if honeypot and honeypot.strip():
+            return jsonify({"status": "error","message": "Spam detectado"})
 
         if len(nombre) < 2 or len(nombre) > 50:
             return jsonify({"status": "error", "message": "El nombre debe tener entre 2 a 50 letras"})
@@ -43,20 +38,21 @@ def send_email():
         if len(mensaje) > 1000:
             return jsonify({"status": "error", "message": "El mensaje es demasiado largo"})
         
-        msg = Message('Nuevo mensaje de contacto', 
-                      sender=app.config['MAIL_USERNAME'],
-                      recipients=[app.config['MAIL_USERNAME']])
-        msg.body = f"Nombre: {nombre}\nCorreo: {correo}\nMensaje: {mensaje}"
+        resend.Emails.send({
+            "from": "onboarding@resend.dev",
+            "to": "marianaemiliasanchez24@gmail.com",
+            "subject": "Mensaje de tu Portafolio",
+            "html": f"""<h2>Nuevo mensaje de contacto</h2>
+            <p><strong>Nombre:</strong> {nombre}</p>
+            <p><strong>Correo:</strong> {correo}</p>
+            <p><strong>Mensaje:</strong></p><p>{mensaje}</p>"""
+            })
 
         #enviar mensaje
-        mail.send(msg)
         return jsonify({"status": "success", "message": "Mensaje enviado correctamente"})
     except Exception as e:
-        print(traceback.format_exc())
-        return jsonify({
-            "status": "error",
-            "message": str(e)
-            })
+        print(f"Error: {e}")
+        return jsonify({"status": "error", "message": str(e)})
     
 
 if __name__ == "__main__":
