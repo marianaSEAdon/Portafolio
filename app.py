@@ -3,6 +3,7 @@ from flask_mail import Mail, Message
 from dotenv import load_dotenv
 import os 
 import re
+import traceback
 
 load_dotenv()
 
@@ -51,8 +52,11 @@ def send_email():
         mail.send(msg)
         return jsonify({"status": "success", "message": "Mensaje enviado correctamente"})
     except Exception as e:
-        print(f"Error: {e}")
-        return jsonify({"status": "error", "message": str(e)})
+        print(traceback.format_exc())
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+            })
     
 
 if __name__ == "__main__":
